@@ -1,6 +1,8 @@
-import type { CardProps } from "../types/sections";
+import { useNavigate } from "react-router-dom";
 
-export default function AboutMeCard({ onNavigate }: CardProps) {
+export default function AboutMeCard() {
+  const navigate = useNavigate();
+
   return (
     <section
       id="about"
@@ -40,13 +42,13 @@ export default function AboutMeCard({ onNavigate }: CardProps) {
 
       <div className="mt-6 flex flex-wrap gap-4">
         <button
-          onClick={() => onNavigate("skills")}
+          onClick={() => navigate("/skills")}
           className="cursor-pointer rounded-md border border-[#1a1a1aa4] px-4 py-2 transition-colors duration-300 hover:bg-[#185FA5] hover:text-white dark:border-[#f0f0f0a9]"
         >
           Technical Skills
         </button>
         <button
-          onClick={() => onNavigate("projects")}
+          onClick={() => navigate("/projects")}
           className="cursor-pointer rounded-md border border-[#1a1a1a] bg-[#2a2a2a] px-4 py-2 text-[#f0f0f0] dark:bg-[#f0f0f0] dark:text-[#1a1a1a]"
         >
           Projects
